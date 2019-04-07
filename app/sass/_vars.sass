@@ -1,0 +1,104 @@
+$default-font: "Montserrat-Regular", sans-serif
+$light-font: "Montserrat-Light", sans-serif
+$bold-font: "Montserrat-Bold", sans-serif
+$black-font: "Montserrat-Black", sans-serif
+
+$text: #333
+$cs: #e7daaf
+$ca: #d24a48
+$cg: #999
+$cw: #fff
+
+$gold: #d9b36e
+$gray: #747474
+$gr1: #b84e4c
+$gr2: #aa2884
+$gr0: #201437
+$gr3: #261438
+$h4: 24px
+$red: #942322
+
+// Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
+$grid-gutter-width: 30px
+$grid-columns: 12
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px)
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px)
+
+$gutter: $grid-gutter-width
+
+// fonts
+@mixin theme-font($family: $default-font, $size: 14px, $spacing: false, $pad-b: 0)
+	padding-bottom: $size / 2.5
+	font-family: $family
+	font-size: $size
+	line-height: $size + ($size * .25)
+	@if $spacing == false
+		@if $size < 14px
+			letter-spacing: .075rem
+		@else if $size < 36px
+			letter-spacing: .025rem
+		@else if $size < 50px
+			letter-spacing: .015rem
+	@else
+		letter-spacing: $spacing
+
+@mixin font-styles
+	.f-micro
+		+theme-font($default-font, 10px)
+	.f-smile
+		+theme-font($default-font, 14px)
+	.f-medium
+		+theme-font($default-font, 16px)
+	.f-lead
+		+theme-font($default-font, 18px)
+	.f-title
+		+theme-font($bold-font, 20px)
+	.f-h1
+		+theme-font($bold-font, 28px, 0.015rem)
+	.f-big
+		+theme-font($default-font, 48px)
+	@media (min-width: 576px)
+		.f-micro
+			+theme-font($default-font, 12px)
+		.f-smile
+			+theme-font($default-font, 14px)
+		.f-medium
+			+theme-font($default-font, 18px)
+		.f-lead
+			+theme-font($default-font, 20px)
+		.f-title
+			+theme-font($bold-font, 24px)
+		.f-h1
+			+theme-font($bold-font, 36px)
+		.f-big
+			+theme-font($default-font, 36px)
+	@media (min-width: 768px)
+		.f-micro
+			+theme-font($default-font, 12px)
+		.f-smile
+			+theme-font($default-font, 14px)
+		.f-medium
+			+theme-font($default-font, 18px)
+		.f-lead
+			+theme-font($default-font, 24px)
+		.f-title
+			+theme-font($bold-font, 36px)
+		.f-h1
+			+theme-font($bold-font, 48px)
+		.f-big
+			+theme-font($default-font, 36px)
+	@media (min-width: 992px)
+		.f-micro
+			+theme-font($default-font, 12px)
+		.f-smile
+			+theme-font($default-font, 14px)
+		.f-medium
+			+theme-font($default-font, 18px)
+		.f-lead
+			+theme-font($default-font, 20px)
+		.f-title
+			+theme-font($bold-font, 36px)
+		.f-h1
+			+theme-font($bold-font, 36px)
+		.f-big
+			+theme-font($default-font, 36px)

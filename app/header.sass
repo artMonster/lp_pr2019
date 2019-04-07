@@ -1,0 +1,937 @@
+@import "sass/vars"
+@import "sass/fonts"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $gold
+	color: #fff
+
+/* Let's get this party started */
+::-webkit-scrollbar
+	width: 10px
+ /* Track */
+::-webkit-scrollbar-track
+	-webkit-box-shadow: inset 0 0 20px rgba($cs, .75)
+
+/* Handle */
+::-webkit-scrollbar-thumb
+	-webkit-border-radius: 0px
+	border-radius: 0px
+	background: $ca
+	-webkit-box-shadow: inset 0 0 6px rgba($cs, .75)
+::-webkit-scrollbar-thumb:window-inactive
+	background: $ca
+img
+	display: none
+body.load
+	+theme-font($default-font, $size: 14px)
+	min-width: 320px
+	position: relative
+	overflow-x: hidden
+	color: $text
+	margin: 0
+	padding: 0
+	border: 0
+	scrollbar-face-color:#5997CA
+	scrollbar-shadow-color: #ffffff
+	scrollbar-highlight-color: #ffffff
+	scrollbar-3dlight-color: #5997CA
+	scrollbar-darkshadow-color: #5997CA
+	scrollbar-track-color: #F6F6F6
+	scrollbar-arrow-color: #F6F6F6
+
+	&:not([class="load"])
+		#app
+			opacity: 0
+		.loader
+			opacity: 1
+			z-index: 12
+		.sec
+			background-image: none!important
+	&.load
+		img
+			display: initial
+		&.touch
+			#app
+				opacity: 1
+p, h1
+	margin: 0
+	padding: 0
+p
+	margin-bottom: 12px
+.ca
+	color: $ca
+.cs
+	color: $cs
+.cw
+	color: $cw
+.cg
+	color: $cg
+.bgca
+	background-color: $ca
+.bgcs
+	background-color: $cs
+.bgcw
+	background-color: $cw
+.bgcg
+	background-color: $cg
+.b-upp
+	font-family: $bold-font
+	text-transform: uppercase
+.upp
+	text-transform: uppercase
+.bgw
+	background-color: white
+
++font-styles
+
+.height-full
+	height: auto
+	.container>.row
+		height: auto
+		padding-top: 15px
+.title
+	margin-bottom: 30px
+	margin-top: 15px
+ul.lists
+	margin: 15px 0 30px 0
+	padding: 0 15px 0 0
+	list-style: none
+	li
+		position: relative
+		margin-bottom: 10px
+		padding-left: 15px
+		text-align: left
+		&:before
+			content: ""
+			width: 6px
+			height: 6px
+			position: absolute
+			left: 0px
+			top: 6px
+			background-color: $ca
+	&.list-cg
+		li
+			&:before
+				background-color: rgba($cg, .4)
+.t-accent
+	position: relative
+	//display: inline-block
+	width: auto
+	margin-bottom: 30px
+	padding-left: 10px
+	&:before
+		content: ""
+		width: 12px
+		height: 12px
+		position: absolute
+		left: -15px
+		top: 5px
+		border-radius: 50%
+		background: linear-gradient(to bottom,$ca 30%,$cs 100%)
+	&.accent-slim
+		padding-left: 15px
+		&:before
+			width: 3px
+			left: 15px
+a.bt,
+.bt,
+a:not([href]):not([tabindex]).bt
+	+theme-font($bold-font, $size: 14px)
+	border: 0
+	border-radius: 34px
+	background-color: $cs 
+	color: $ca
+	padding: 16px 12px 16px 12px
+	display: inline-block
+	text-transform: uppercase
+	vertical-align: middle
+	text-align: center
+	margin-bottom: 30px
+	margin-top: 15px
+	width: 100%
+	max-width: 320px
+	&:hover
+		background-color: $gold
+		color: $cw
+	&.bt-invert
+		background: none
+		border: 3px solid $cs
+		min-height: auto
+		padding-top: 8px
+		padding-bottom: 8px
+		color: $cs
+		width: auto
+		min-width: auto
+	&.bt-more
+		+theme-font($bold-font, $size: 36px)
+		padding: 0px 12px
+		margin: 0
+		position: relative
+		z-index: 11
+		width: auto
+		min-width: auto
+	&.fb_login_btn
+		height: auto
+		padding: 12px 12px 10px 12px
+		min-height: auto
+	&.bt-b
+		max-width: 100%
+	&.bt-red
+		background-color: $ca
+		color: $cs
+		max-width: 420px
+		&:hover
+			background-color: $gold
+			color: $cw
+
+.sec, .sec-b
+	background-size: cover
+	background-repeat: no-repeat
+	padding-top: 60px
+	padding-bottom: 60px
+	position: relative
+	overflow: hidden
+.sec-f
+	padding-top: 70px
+	img
+		display: none
+	&.sec5
+		padding-top: 120px
+	&.sec9
+		padding-top: 30px
+.kyrs
+	.header
+		padding-top: 70px
+	.sec-f .tc img
+		display: none
+.sec1
+	min-height: 600px
+	padding-top: 180px
+	background-color: $red
+	&:before
+		content: ""
+		width: 100%
+		height: 100%
+		left: 0
+		top: 0
+		position: absolute
+		background-image: url('m/sec1.jpg')
+		background-size: cover
+		background-position: 75% 50%
+		opacity: .2	
+	.row
+		min-height: 500px
+		
+.sec-b
+	color: $cw
+	.title
+		span
+			color: $cs
+.sec1
+	.logo
+		margin-left: 20px
+	.text-left
+		text-align: center
+	
+.slogan
+	.title
+		margin-bottom: 10px
+.sec3
+	//background-image: url('m/sec3.jpg')
+	background-size: cover
+	background-position: 50% 50%
+	background-color: $red
+.sec5, .sec9
+	//background-image: url('img/sec4.jpg')
+	background-position: 50% 50%
+	background-color: $red
+.sec4
+	border-bottom: 2px solid $red
+.sec7
+	background-color: $red
+	&:before
+		content: ""
+		width: 100%
+		height: 100%
+		left: 0
+		top: 0
+		position: absolute
+		background-image: url('m/sec7.jpg')
+		background-size: cover
+		background-position: 65% 50%
+		opacity: .2
+.paks
+	padding-right: 15px
+	.title
+		margin-top: 0
+		border-bottom: 4px solid $cs
+		margin-bottom: 40px
+	.bt
+		width: 100%
+	ul.lists
+		li
+			&:before
+				left: -15px
+.slider
+	padding-top: 60px
+	.item
+		text-align: center
+		padding: 10px
+	.slick-arrow
+		position: absolute
+		top: -20px
+		+theme-font($bold-font, $size: 16px)
+		border: 0
+		border-radius: 34px
+		background-color: $cs 
+		color: $ca
+		padding: 1px 22px 0 18px
+		height: 60px
+		width: 60px
+		display: inline-block
+		text-transform: uppercase
+		vertical-align: middle
+		text-align: center
+		margin-bottom: 30px
+		margin-top: 15px
+		outline: none
+		&.slick-next
+			right: 0
+			padding: 1px 18px 0 22px
+
+.more
+	height: 0
+	overflow: hidden
+	position: relative
+	padding-bottom: 60px
+	transform: translateY(-70px)
+	&:before
+		content: ""
+		width: calc(90% - 60px)
+		height: 2px
+		position: absolute
+		right: 30px
+		bottom: 30px
+		background-color: $cs
+		transform: skewY(-6deg)
+	.lists
+		opacity: 0
+		transition: .2s ease-out
+.open
+	.bt-more
+		display: none
+	.more
+		height: auto
+		padding-bottom: 30px
+		transform: translateY(0px)
+		.lists
+			opacity: 1
+			transition: 1.8s ease-out
+.it
+	.t-accent
+		margin-top: 15px
+.text-left
+	text-align: left
+.text-right
+	text-align: right
+.app
+	position: relative	
+	z-index: 11
+	transition: opacity .2s ease-out
+	overflow: hidden
+.sec.sec0
+	background-repeat: no-repeat
+	background-position: 50% 100%
+	background-size: cover
+	background-color: #55294e
+	padding: 0
+	.logo
+		max-width: 140px
+a, button, .thumb,
+	transition: .15s ease-out
+	cursor: pointer
+.more
+	transition: .15s ease-out
+span.target
+	transition: 2s ease
+
+.title-fix
+	transition: .3s ease-out
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+.no-gutters
+	margin-right: 0
+	margin-left: 0
+	&>.col,
+	&>[class*="col-"]
+		padding-right: 0
+		padding-left: 0
+.tc
+	text-align: center
+	img
+		margin-left: auto
+		margin-right: auto
+		
+.tr
+	text-align: right
+.tl
+	text-align: left
+.pr
+	position: relative
+	
+a
+	text-decoration: none!important
+b, strong
+	font-family: $bold-font
+h2
+	font-family: $black-font
+h2
+	font-family: $black-font
+picture
+	display: inline-block
+.lead-l
+	font-family: $default-font
+.bggr
+	background-color: $gray
+.play
+	background: none
+	width: 60px
+	height: 60px
+	min-height: auto
+	min-width: auto
+	border: 3px solid #fff
+	padding-top: 4px
+	padding-left: 0
+	padding-right: 0
+	padding-bottom: 0
+	outline: none
+	svg
+		max-width: 33px
+		filter: invert(0%)
+		outline: none
+		margin-left: auto
+		margin-right: auto
+		display: block
+.bt-play
+	display: inline-block
+	vertical-align: top
+	width: 27%
+	margin-right: 10px
+	.bt
+		padding-left: 26px
+		padding-right: 22px
+		font-size: 2rem
+		padding-top: 10px
+		padding-bottom: 0
+		margin-right: 0px
+		margin-left: 0px
+		min-width: 40px
+.bt-text
+	max-width: 130px
+	display: inline-block
+	vertical-align: middle
+	text-align: right
+	float: right
+	padding-top: 10px
+	padding-bottom: 10px
+	font-size: 9px
+	padding-right: 10px
+.text-center
+	h3
+		position: relative
+		&:before
+			content: ""
+			width: 180px
+			height: 1px
+			background-color: $gold
+			position: absolute
+			left: calc(50% - 90px)
+			bottom: -20px
+		&:after
+			content: ""
+			width: 40px
+			height: 2px
+			background-color: $gold
+			position: absolute
+			left: calc(50% - 20px)
+			bottom: -22px
+h3
+	position: relative
+	&:before
+		content: ""
+		width: 180px
+		height: 1px
+		background-color: $gold
+		position: absolute
+		left: 0
+		bottom: -20px
+	&:after
+		content: ""
+		width: 40px
+		height: 2px
+		background-color: $gold
+		position: absolute
+		left: 0
+		bottom: -22px
+	picture
+		padding-top: 8px
+		padding-right: 12px
+	small
+		display: block
+		font-size: 1.25rem
+.complite
+	background-color: #f6f6f6
+	position: relative
+	top: -15px
+	max-width: 310px
+	margin-left: auto
+	margin-right: auto
+	&:before
+		content: ""
+		width: 50%
+		height: 100%
+		position: absolute
+		left: 0
+		top: 0
+		background-color: rgba(255,92,93,.49)
+	span
+		position: relative
+		text-align: center
+		width: 100%
+		display: block
+ul
+	li
+		margin-bottom: 10px
+.lead
+	font-size: 1.25rem
+	strong
+		font-family: $black-font
+.header
+	position: absolute
+	z-index: 22
+	width: 100%
+	left: 0
+	top: 0
+	padding-top: 10px
+	&.fix
+		position: fixed
+		z-index: 22
+		width: 100%
+		left: 0
+		background-color: $gold
+		top: 0
+		padding-top: 0px
+		border-bottom: 2px solid $ca
+		&:after
+			display: none
+		&:before
+			background-color: $cw
+		span
+			color: #fff
+		.row
+			height: 60px
+		.bt
+			padding: 7px 12px 5px
+			min-height: 32px
+			font-size: 12px
+			transform: none
+			margin: 0
+		.phone
+			display: none
+	.bt,
+	a:not([href]):not([tabindex])
+		transform: none
+		margin: 0
+		font-size: 12px
+		display: none
+	.logo
+		max-height: 50px
+	.row
+		height: auto
+	span
+		color: $gold
+	p
+		margin-bottom: 5px
+		margin-top: 0
+	.top-phone
+		display: inline-block
+		vertical-align: middle
+		p
+			margin-bottom: 0
+		a
+			color: $cs
+			padding-top: 0px
+			padding-bottom: 0px
+			display: inline-block
+			border-bottom: 1px solid transparent
+			&:hover
+				border-bottom: 1px solid $ca
+	&.sec-b
+		background-image: url('m/sec4.jpg')
+		background-size: cover
+		background-position: 50% 50%
+		padding-bottom: 20px
+		padding-top: 10px
+
+footer
+	background-repeat: no-repeat
+	background-position: 50% 30%
+	background-size: cover
+	padding-top: 20px
+	padding-bottom: 20px
+	text-align: center
+	.ico
+		opacity: .2
+		font-size: 36px
+		padding-top: 10px
+		padding-bottom: 10px
+		display: inline-block
+	.t-accent
+		margin-bottom: 15px
+	a
+		color: $cs
+		+theme-font($default-font, $size: 14px)
+		padding: 0
+		margin: 0
+		&:hover
+			border-color: transparent
+			color: $ca
+			span
+				color: $ca
+	.nav-link
+		+theme-font($default-font, $size: 12px)
+		opacity: .5
+		color: $ca
+		border-bottom: 1px dotted $gr1
+		margin-left: 10px
+		display: inline-block
+		margin-bottom: 5px
+		&:hover
+			border-color: transparent
+			color: $cs
+			opacity: 1
+	.contacts
+		margin-bottom: 20px
+		border-bottom: 1px dotted rgba(white, .2)
+		padding-bottom: 30px
+	.cc
+		opacity: .2
+		margin-bottom: 6px
+		margin-top: 6px
+		img
+			filter: invert(100%)	
+	.logo
+		margin-left: auto
+		margin-right: auto
+		max-width: 100px
+		width: 100%
+		display: block
+		margin-bottom: 15px
+		filter: invert(25%)
+	.tr
+		text-align: center
+form
+	input, textarea
+		border: 1px solid $gold
+		padding: 16px
+		width: 100%
+		margin-bottom: 10px
+		font-size: 16px
+		font-family: $bold-font
+		border-radius: 36px
+	.bt
+		width: 100%
+		margin-bottom: 15px
+		margin-top: 25px
+.form
+	max-width: 100%
+	position: relative
+	border-radius: 0px
+	margin-bottom: 40px
+	.preloader
+		animation-play-state: paused
+		opacity: 0
+	&.send
+		.preloader
+			animation-play-state: running
+			opacity: 1
+		.form-cont
+			opacity: 0
+	small, label
+		font-size: 14px
+		display: inline-block
+		margin-bottom: 5px
+	.bt
+		max-width: 100%
+.form-popup
+	.form
+		margin: 0 auto
+		padding: 30px
+		background-color: $cw
+		.bt
+			background-color: $ca
+			color: $cw
+.error-message
+	position: absolute
+	right: 0
+	bottom: -40px
+	width: 100%
+	font-size: 11px
+	color: $ca
+	text-align: center
+.intl-tel-input
+	width: 100%
+	margin-bottom: 10px
+.country-list
+	color: $text
+	z-index: 661
+
+.player
+	display: inline-block
+	position: relative
+	margin-bottom: 20px
+	margin-top: 40px
+	&:hover
+		picture
+			opacity: 0.4
+		
+		.thumb
+			background-color: $gr1
+		.play
+			border-color: #fff
+			svg
+				filter: invert(100%)
+	.thumb
+		position: relative
+		img
+			max-width: 560px
+			width: 100%
+	.play
+		background: none
+		position: absolute
+		top: calc(50% - 30px)
+		left: calc(50% - 30px)
+		width: 60px
+		height: 60px
+		min-height: auto
+		min-width: auto
+		border: 4px solid $gr0
+		padding-top: 4px
+		padding-left: 5px
+		padding-right: 0
+		padding-bottom: 0
+		outline: none
+		margin: 0
+		svg
+			max-width: 24px
+			filter: invert(0%)
+			outline: none
+	#ytplayerOne,
+	#ytplayerTwo,
+	#ytplayerThree
+		position: absolute
+		top: 0px
+
+.grafik
+	background-repeat: no-repeat
+	background-position: 0% 10px
+	background-size: contain
+	padding-top: 20px
+	.row
+		min-height: auto
+	span
+		max-width: 210px
+		color: #fff
+		display: block
+		position: relative
+		padding-left: 20px
+		font-size: 14px
+		&:before
+			content: ""
+			width: 10px
+			height: 2px
+			position: absolute
+			left: 0px
+			top: 12px
+			background-color: $ca
+			transform: skewY(-12deg)
+	.g1
+		transform: translateX(220px)
+	.g2
+		transform: translateX(350px) translateY(70px)
+	.g3
+		transform: translateX(90px) translateY(40px)
+	.g4
+		transform: translateX(150px) translateY(140px)
+	.g5
+		transform: translateX(50px) translateY(180px)
+.row-f
+	height: auto
+	min-height: 520px	
+	max-height: 720px
+.fz12
+	font-size: 12px
+	line-height: 18px
+.fz26
+	font-size: 20px
+.fz36
+	font-size: 36px
+.fz18
+	font-size: 18px
+.img-circle
+	border-radius: 50%
+ul.lists.mt3
+	margin-top: 60px
+	margin-top: 0px
+	margin-bottom: 0px
+	padding-bottom: 0
+ul.lists.mt6
+	padding-top: 120px
+	margin-top: 0px
+	margin-bottom: 0px
+	padding-bottom: 0
+.bor
+	border-bottom: 4px solid $ca
+.bor2
+	border-bottom: 1px solid $ca
+iframe
+	max-width: 100%
+	height: auto
+	min-height: 200px
+.video-wrap
+	width: 100%
+	position: relative
+	margin: 0 auto
+	min-height: 300px
+	.first
+		border-radius: 12px
+		border: 1px solid #d4d4d2
+		&:before
+			content: ""
+			width: 100%
+			height: 100%
+			position: absolute
+			border-radius: 12px
+			border: 1px solid #d4d4d2
+			left: 0px
+			top: 0px
+		&:after
+			content: ""
+			width: calc(100% - 2px)
+			height: calc(100% - 2px)
+			position: absolute
+			border-radius: 12px
+			border: 1px solid #dddddc
+			left: 1px
+			top: 1px			
+	.main
+		border-radius: 12px
+		border: 6px solid #000
+		position: absolute
+		top: 6px
+		height: 100%
+		left: 6px
+		width: calc(100% - 12px)
+		height: calc(100% - 12px)
+		iframe
+			width: 100%
+			height: 100%
+			border: none
+	div
+		position: relative
+		height: 100%
+
+	.seccond
+		border-radius: 12px
+		border: 1px solid #3f3f3f
+		position: absolute
+		width: 100%
+		top: 3px
+		height: 100%
+		left: 3px
+		width: calc(100% - 6px)
+		height: calc(100% - 6px)
+		&:before
+			content: ""
+			width: 100%
+			height: 100%
+			position: absolute
+			border-radius: 12px
+			border: 1px solid #5a5a5a
+			left: 0px
+			top: 0px
+		&:after
+			content: ""
+			width: calc(100% - 2px)
+			height: calc(100% - 2px)
+			position: absolute
+			border-radius: 12px
+			border: 1px solid #6c6c6c
+			left: 1px
+			top: 1px
+.countdown
+	display: inline-block
+	border: 2px solid $ca
+	padding: 20px
+	border-radius: 36px
+	&>div
+		display: inline-block
+		text-align: center
+		margin-left: 10px
+		margin-right: 10px
+	.numb
+		display: block
+		+theme-font($bold-font, $size: 24px)
+.lesson_small
+	margin-top: 5px
+	margin-bottom: 10px
+	&.active
+		margin-left: -30px
+		opacity: 1
+		.fooo
+			background-color: $cs
+	&.noactive
+		opacity: .5
+		.fooo
+			&:hover
+				background-color: $cw
+	.fooo
+		background-color: $cw
+		border-bottom: 3px solid $ca
+		padding: 10px 20px
+		overflow: hidden
+		&:hover
+			background-color: $cs
+		.icon
+			float: left
+			width: 28%
+			img
+				width: 70px
+				height: 70px
+		.ttx
+			float: left
+			width: 72%
+			color: $text
+.item_two
+	text-transform: uppercase
+	background-color: $cs
+	text-align: center
+	padding-top: 10px
+	padding-bottom: 10px
+	border-top: 4px solid $ca
+	margin-bottom: 30px
+	padding-left: 10px
+	padding-right: 10px
+	height: 220px
+	max-width: 340px
+	margin-left: auto
+	margin-right: auto
+.numb
